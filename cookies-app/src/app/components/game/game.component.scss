@@ -1,0 +1,51 @@
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+.like-button{
+    width: 100px;
+    height: 30px;
+    background-color: #7faf71;
+    box-shadow: 2px 3px 4px rgb(50, 49, 49);
+    font-weight: 300;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    text-decoration: none;
+    margin-right: 10px;
+    padding: 10px;
+    margin: 10px;
+    cursor: pointer;
+  
+    &:hover{
+      background-color: #4a9694;
+  
+      animation:btn_color_hover 0.5s;
+  
+      @keyframes btn_color_hover {
+        0% {background-color: #7faf71;}
+        100% {background-color:#4a9694;}
+      }
+  
+      transition: transform 125ms;
+      transform: scale(1.1);
+    }
+    &:active{
+      transform: translateY(10px);
+      background-color: #a25cd8;
+      
+      animation:btn_color_active 0.5s;
+  
+      @keyframes btn_color_active {
+        0% {background-color: #4a9694;}
+        100% {background-color:#a25cd8;}
+      }
+      transition: transform 125ms;
+      transform: scale(1);
+    }
+  }

@@ -1,0 +1,12 @@
+<p>home works!</p>
+
+<div class="mega-form">
+    <form class="mega-form__form" novalidate (ngSubmit)="onSubmit()" [formGroup]="userForm">
+      <fieldset class="mega-form__fieldset">
+        <label class="mega-form__label" for="name">UserName:</label>
+        <input class="mega-form__input" type="text" id="name" formControlName="name" placeholder="Mega Pikachu" />
+      </fieldset>
+  
+      <button class="poke-button" type="submit" [disabled]="!userForm.valid">Submit</button>
+    </form>
+  </div>
