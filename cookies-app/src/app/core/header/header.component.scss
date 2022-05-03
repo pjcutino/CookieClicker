@@ -10,9 +10,13 @@
         width: 40px;
         margin-right: 20px;
         background-color: #958989;
+        position: relative;
     }
     &__btn-img{
         height: 30px;
         width: 30px;
+        position: absolute;
+        top: 3.5px;
+        left: 3px;
     }
 }

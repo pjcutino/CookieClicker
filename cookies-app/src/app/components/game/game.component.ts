@@ -1,6 +1,6 @@
 import { AfterContentInit, AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { PersistanceService } from 'src/app/shared/services/localstorage.service';
+import { StorageService } from 'src/app/shared/services/localstorage.service';
 import { User } from 'src/app/shared/services/models/user';
 
 @Component({
@@ -50,10 +50,10 @@ export class GameComponent implements AfterContentInit  {
   @ViewChild('machineBtn') machineBtn! : ElementRef;
   @ViewChild('rushBanner') rushBanner! : ElementRef;
 
-  constructor(private persistanceService: PersistanceService, private route : ActivatedRoute) {
+  constructor(private storageService: StorageService, private route : ActivatedRoute) {
     this.route.paramMap.subscribe(params => {
       this.userName = params.get('userName')!;
-      const clientData = this.persistanceService.get(this.userName);
+      const clientData = this.storageService.get(this.userName);
       this.user = Object.assign(new User(this.userName), clientData)
       console.log(this.user?.name);
     })
@@ -159,7 +159,7 @@ export class GameComponent implements AfterContentInit  {
   }
 
   updateUser() : void {
-    this.persistanceService.set(this.userName!,this.user);
+    this.storageService.set(this.userName!,this.user);
   }
 
   reset(){

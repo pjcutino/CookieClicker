@@ -3,7 +3,7 @@ import { FormBuilder } from '@angular/forms';
 import { By } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
-import { PersistanceService } from 'src/app/shared/services/localstorage.service';
+import { StorageService } from 'src/app/shared/services/localstorage.service';
 
 import { HomeComponent } from './home.component';
 
@@ -15,7 +15,7 @@ describe('HomeComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [ HomeComponent ],
       imports: [RouterTestingModule ],
-      providers: [PersistanceService, FormBuilder]
+      providers: [StorageService, FormBuilder]
     })
     .compileComponents();
   });

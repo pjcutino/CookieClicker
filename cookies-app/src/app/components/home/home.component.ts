@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { PersistanceService } from 'src/app/shared/services/localstorage.service';
+import { StorageService } from 'src/app/shared/services/localstorage.service';
 import { User } from 'src/app/shared/services/models/user';
 
 @Component({
@@ -15,7 +15,7 @@ export class HomeComponent {
   public submitted: boolean = false;
   users : User[] = []
 
-  constructor(private persistanceService: PersistanceService, private router : Router, private formBuilder: FormBuilder) {
+  constructor(private persistanceService: StorageService, private router : Router, private formBuilder: FormBuilder) {
       this.userForm = this.formBuilder.group({
         name: ['', [Validators.required, Validators.minLength(5)]]
       });

@@ -1,12 +1,12 @@
-import { Injectable } from '@angular/core';
+import { Inject, Injectable } from '@angular/core';
 
 @Injectable()
-export class PersistanceService {
-  constructor() {}
+export class StorageService {
+  constructor(@Inject('Window') protected window: Window) {}
 
   set(key: string, data: any): void {
     try {
-      localStorage.setItem(key, JSON.stringify(data));
+      this.window.localStorage.setItem(key, JSON.stringify(data));
     } catch (e) {
       console.error('Error saving to localStorage', e);
     }
@@ -14,7 +14,7 @@ export class PersistanceService {
 
   get(key: string) {
     try {
-      return JSON.parse(localStorage.getItem(key)!);
+      return JSON.parse(this.window.localStorage.getItem(key)!);
     } catch (e) {
       console.error('Error getting data from localStorage', e);
       return null;

@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { RouterTestingModule } from '@angular/router/testing';
-import { PersistanceService } from 'src/app/shared/services/localstorage.service';
+import { StorageService } from 'src/app/shared/services/localstorage.service';
 
 import { GameComponent } from './game.component';
 
@@ -13,7 +13,7 @@ describe('GameComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [ GameComponent ],
       imports: [RouterTestingModule],
-      providers: [PersistanceService]
+      providers: [StorageService]
     })
     .compileComponents();
   });
