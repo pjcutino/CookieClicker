@@ -32,6 +32,13 @@
 
 .home__fieldset {
   border: 0px;
+  font-size: 15px;
+}
+
+@media only screen and (min-width: 768px) {
+  .home__fieldset {
+    font-size: 16px;
+  }
 }
 
 .home__img-container {
@@ -53,25 +60,50 @@
 
 .home__form-container {
   position: relative;
-  width: 300px;
+  width: 200px;
   padding: 20px;
 }
 
+@media only screen and (min-width: 768px) {
+  .home__form-container {
+    width: 300px;
+  }
+}
+
 .home__input {
-  width: 255px;
+  width: 155px;
+}
+
+@media only screen and (min-width: 768px) {
+  .home__input {
+    width: 255px;
+  }
 }
 
 .home__btn {
   position: absolute;
-  left: 34px;
-  top: 200px;
+  left: 32px;
+  top: 185px;
+}
+
+@media only screen and (min-width: 768px) {
+  .home__btn {
+    top: 195px;
+    left: 34px;
+  }
 }
 
 .home__leaderboard {
   background-color: #613737;
-  width: 540px;
+  width: 440px;
   color: white;
   padding: 0;
+}
+
+@media only screen and (min-width: 768px) {
+  .home__leaderboard {
+    width: 540px;
+  }
 }
 
 .home__leaderboard-list {
