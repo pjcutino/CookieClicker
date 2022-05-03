@@ -21,7 +21,7 @@ Encontraremos 3 botones de mejora:
 
 - Sells: aumenta el numero de ventas por click y se muestra el multiplicador como nivel (Lvl 2 = clicks * 2).
 - Press: Añadir un nuevo auto clicker. Límite: 13.
-- Machine: Añadir un nuevo mega auto clicker por un precio mayor. Límite: 12.
+- Machine: Añadir un nuevo mega auto clicker por un precio mayor. Límite: 10.
 
 Evento Rush Hour:
 
