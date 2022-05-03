@@ -1,12 +1,30 @@
-<p>home works!</p>
-
-<div class="mega-form">
-    <form class="mega-form__form" novalidate (ngSubmit)="onSubmit()" [formGroup]="userForm">
-      <fieldset class="mega-form__fieldset">
-        <label class="mega-form__label" for="name">UserName:</label>
-        <input class="mega-form__input" type="text" id="name" formControlName="name" placeholder="Mega Pikachu" />
-      </fieldset>
-  
-      <button class="poke-button" type="submit" [disabled]="!userForm.valid">Submit</button>
-    </form>
+<div class="home">
+  <div class="home__section">
+    <div class="home__form">
+      <form class="home__form-container" novalidate (ngSubmit)="onSubmit()" [formGroup]="userForm">
+        <fieldset class="home__fieldset">
+          <p class="home__info">Welcome to Coffee Clicker!</p>
+          <p class="home__info">Enter a Username of at least 5 characters to start</p>
+          <p class="home__label" for="name">UserName:</p>
+          <input class="home__input" type="text" id="name" formControlName="name" placeholder="Username" />
+        </fieldset>
+    
+        <button class="home__btn" type="submit" [disabled]="!userForm.valid">Submit</button>
+      </form>
+    </div>
+    <div class="home__img-container">
+      <img class="home__img" src="/assets/images/coffee.jpg"/>
+      <p class="home__title">Coffee-Clicker</p>
+    </div>
   </div>
+  <div class="home__section">
+    <div class="home__leaderboard" *ngIf="users"> 
+      <ul class="home__leaderboard-list">
+        <p class="home__leaderboard-title">Leader Board</p>
+        <li class="home__leaderboard-item"*ngFor="let user of users">
+          <p>{{user.name}} - sells: {{user.clicks}} Lvl {{user.clickerLevel}} Presses {{user.autoclickers}} Machines {{user.megaautoclickers}}</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

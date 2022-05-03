@@ -1,2 +1,36 @@
-<p>game works!</p>
-<a class="like-button noselect">like-button</a>
+<div class="cafe-container">
+    <div class="cafe-container__content" *ngIf="user">
+       
+        <div class="cafe">
+            <p class="cafe__name">{{ user.name }}'s coffee shop</p>
+            <div class="cafe__rush-banner" [ngClass]="{'cafe__rush-banner--fadeIn': rushHourMultiplier != 1, 'cafe__rush-banner--fadeOut': rushHourInit == false && rushHourMultiplier == 1}" #rushBanner>Rush Hour (Sells by click x5)</div>
+            <div class="cafe__click-banner" [ngClass]="isFirstClick ? 'fadeOut' : 'bouncing'">Click here ➤</div>
+            <a class="cafe__btn noselect transformable" (click)="clickAction()">
+                <img class="cafe__btn-img" src="/assets/images/coffee.png" />
+            </a>
+            <a class="cafe__upgrade-btn cafe__upgrade-btn--click noselect" (click)="incrementClicker()">
+                <p>sells Lvl {{user.clickerLevel}} </p>
+                <p>{{numFormatter(clickerCost)}} ¥</p>
+            </a>
+            <a class="cafe__upgrade-btn cafe__upgrade-btn--press noselect" (click)="incrementAutoClickers()" #pressBtn>
+                <p>press</p>
+                <p>{{numFormatter(autoClickerCost)}} ¥</p>
+            </a>
+            <a class="cafe__upgrade-btn cafe__upgrade-btn--machine noselect" (click)="incrementMegaAutoClickers()" #machineBtn><p> machine</p> <p>{{numFormatter(megaAutoClickerCost)}} ¥</p></a>
+            <p class="cafe__click-counter">Sells: {{ numFormatter(user.clicks) }} ¥</p>
+        </div>
+
+        <div class="coffee-makers">
+            <div class="coffee-makers__container" *ngFor="let n of numSequence(user.autoclickers)">
+                <app-coffee-maker ></app-coffee-maker>
+            </div>
+        </div>
+        <div class="coffee-makers">
+            <div class="coffee-makers__container" *ngFor="let n of numSequence(user.megaautoclickers)">
+                <app-mega-coffee-maker ></app-mega-coffee-maker>
+            </div>
+        </div>
+        
+        <!--<a class="upgrade-btn noselect" (click)="reset()">reset all</a>-->
+    </div>
+</div>

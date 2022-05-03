@@ -13,11 +13,17 @@ export class HomeComponent {
 
   public userForm: FormGroup;
   public submitted: boolean = false;
+  users : User[] = []
 
-  constructor(private router : Router, private formBuilder: FormBuilder, private persistanceService: PersistanceService) {
+  constructor(private persistanceService: PersistanceService, private router : Router, private formBuilder: FormBuilder) {
       this.userForm = this.formBuilder.group({
         name: ['', [Validators.required, Validators.minLength(5)]]
       });
+
+      // get instance of all users
+      for (let [key, value] of Object.entries(localStorage)) {
+        this.users.push(this.persistanceService.get(key));
+    }
    }
 
    public onSubmit(): void {
@@ -30,11 +36,10 @@ export class HomeComponent {
 
       }else{
         let user = new User(userName);
-        this.persistanceService.set(userName,JSON.stringify(user));
-        console.log(this.persistanceService.get(userName));
+        this.persistanceService.set(userName,user);
       }
 
-      this.router.navigate(['/game']);
+      this.router.navigate(['/game',userName]);
 
       this.userForm.reset();
       this.submitted = false;
