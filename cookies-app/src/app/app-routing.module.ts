@@ -9,6 +9,10 @@ const routes: Routes = [
   {
     path:"game", //lazy load
     loadChildren: () => import('./components/game/game.module').then(mod => mod.GameModule),
+  },
+  {
+    path:"home", //lazy load
+    loadChildren: () => import('./components/home/home.module').then(mod => mod.HomeModule),
   }
 ];
 

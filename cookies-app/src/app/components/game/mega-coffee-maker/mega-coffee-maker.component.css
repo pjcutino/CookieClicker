@@ -1,0 +1,44 @@
+.mega-coffee-maker {
+  width: 40px;
+  height: 40px;
+  -webkit-animation-duration: 0.6s;
+          animation-duration: 0.6s;
+  -webkit-animation-name: changewidth;
+          animation-name: changewidth;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+  position: absolute;
+}
+
+@-webkit-keyframes changewidth {
+  from {
+    width: 40px;
+    height: 40px;
+    left: 0px;
+    top: 0px;
+  }
+  to {
+    width: 45px;
+    height: 45px;
+    left: -2px;
+    top: -2px;
+  }
+}
+
+@keyframes changewidth {
+  from {
+    width: 40px;
+    height: 40px;
+    left: 0px;
+    top: 0px;
+  }
+  to {
+    width: 45px;
+    height: 45px;
+    left: -2px;
+    top: -2px;
+  }
+}
+/*# sourceMappingURL=mega-coffee-maker.component.css.map */

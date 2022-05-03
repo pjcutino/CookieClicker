@@ -1,0 +1,91 @@
+.home {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.home__section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.home__form {
+  background-color: #613737;
+  height: 300px;
+  color: white;
+}
+
+.home__fieldset {
+  border: 0px;
+}
+
+.home__img-container {
+  position: relative;
+}
+
+.home__img {
+  height: 300px;
+}
+
+.home__title {
+  position: absolute;
+  top: 15px;
+  left: 40px;
+  color: brown;
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.home__form-container {
+  position: relative;
+  width: 300px;
+  padding: 20px;
+}
+
+.home__input {
+  width: 255px;
+}
+
+.home__btn {
+  position: absolute;
+  left: 34px;
+  top: 200px;
+}
+
+.home__leaderboard {
+  background-color: #613737;
+  width: 540px;
+  color: white;
+  padding: 0;
+}
+
+.home__leaderboard-list {
+  margin-left: 20px;
+  padding: 0;
+}
+
+.home__leaderboard-title {
+  text-align: center;
+  font-weight: 900;
+  margin-bottom: 30px;
+}
+
+.home__leaderboard-item {
+  margin-left: 20px;
+}
+/*# sourceMappingURL=home.component.css.map */

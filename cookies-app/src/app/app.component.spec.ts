@@ -1,12 +1,20 @@
 import { TestBed } from '@angular/core/testing';
+import { BrowserModule } from '@angular/platform-browser';
 import { RouterTestingModule } from '@angular/router/testing';
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { CoreModule } from './core/core.module';
+import { FooterComponent } from './core/footer/footer.component';
+import { HeaderComponent } from './core/header/header.component';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule
+        RouterTestingModule,
+        BrowserModule,
+        AppRoutingModule,
+        CoreModule
       ],
       declarations: [
         AppComponent
@@ -26,10 +34,15 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('cookies-app');
   });
 
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('cookies-app app is running!');
+  it(`should have header`, () => {
+    const headerComp = TestBed.createComponent(HeaderComponent);
+    const headerCompInstance = headerComp.componentInstance;
+    expect(headerCompInstance).toBeTruthy();
   });
+  it(`should have footer`, () => {
+    const footerComp = TestBed.createComponent(FooterComponent);
+    const footerCompInstance = footerComp.componentInstance;
+    expect(footerCompInstance).toBeTruthy();
+  });
+
 });

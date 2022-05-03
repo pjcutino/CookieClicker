@@ -1,1 +1,5 @@
-<div class="header-container"></div>
+<div class="header-container">
+    <button class="header-container__btn" (click)="logOut()" *ngIf="router.url !== ('/' && '/home') ">
+        <img class="header-container__btn-img" src="/assets/images/logout.png" />
+    </button>
+</div>

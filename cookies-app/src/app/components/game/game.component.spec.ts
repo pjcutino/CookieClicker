@@ -1,4 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { By } from '@angular/platform-browser';
+import { RouterTestingModule } from '@angular/router/testing';
+import { PersistanceService } from 'src/app/shared/services/localstorage.service';
 
 import { GameComponent } from './game.component';
 
@@ -8,7 +11,9 @@ describe('GameComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ GameComponent ]
+      declarations: [ GameComponent ],
+      imports: [RouterTestingModule],
+      providers: [PersistanceService]
     })
     .compileComponents();
   });
@@ -21,5 +26,10 @@ describe('GameComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+  it('should render click banner', () => {
+    fixture.detectChanges();
+    const el = fixture.debugElement.query(By.css('.bouncing')).nativeElement;
+    expect(el.innerText).toContain('Click here ➤');
   });
 });

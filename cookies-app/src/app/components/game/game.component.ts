@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { AfterContentInit, AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PersistanceService } from 'src/app/shared/services/localstorage.service';
 import { User } from 'src/app/shared/services/models/user';
@@ -8,7 +8,7 @@ import { User } from 'src/app/shared/services/models/user';
   templateUrl: './game.component.html',
   styleUrls: ['./game.component.scss']
 })
-export class GameComponent implements AfterViewInit {
+export class GameComponent implements AfterContentInit  {
 
   userName? : string;
   user? : User;
@@ -59,7 +59,7 @@ export class GameComponent implements AfterViewInit {
     })
   }
 
-  ngAfterViewInit(): void {
+  ngAfterContentInit(): void {
     // remember all set data
     this.clickerCost = this.clickerBaseCost + this.clickerBaseCost * this.user!.clickerLevel;
     this.autoClickerCost = this.autoClickerBaseCost + this.autoClickerBaseCost * this.user!.autoclickers;
@@ -184,18 +184,16 @@ export class GameComponent implements AfterViewInit {
 
   updateAutoClickerInterval(){
     clearInterval(this.autoPressIntervalId);
-    // array de elementos y hacer que de un contador mod %num autoclickers haga animacion y luego ++i
     this.autoPressIntervalId = setInterval(() => {
       this.incrementClicks(this.autoClickerValue*this.user!.autoclickers);
-    }, 1000); // ver si esto es constante
+    }, 1000); 
   }
 
   updateMegaAutoClickerInterval(){
     clearInterval(this.autoMachineIntervalId);
-    // array de elementos y hacer que de un contador mod %num autoclickers haga animacion y luego ++i
     this.autoMachineIntervalId = setInterval(() => {
       this.incrementClicks(this.megaAutoClickerValue*this.user!.megaautoclickers);
-    }, 1000); // ver si esto es constante
+    }, 1000); 
   }
 
   numFormatter(num: number) {
