@@ -27,7 +27,7 @@ export class GameComponent implements AfterContentInit  {
 
   // limits
   autoPressLimit : number = 13;
-  autoMachineLimit : number = 13;
+  autoMachineLimit : number = 10;
 
   // timers and loops
   autoPressIntervalId: any;

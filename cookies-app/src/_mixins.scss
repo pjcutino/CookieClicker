@@ -1,0 +1,16 @@
+@mixin tablet {
+    @media only screen and (min-width: #{$layout_bp_tablet}) {
+      @content;
+    }
+}
+  
+@mixin desktop {
+    @media only screen and (min-width: #{$layout_bp_desktop}) {
+        @content;
+    }
+}
+@mixin flex-center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

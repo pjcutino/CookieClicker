@@ -1,14 +1,17 @@
+@import '../../../variables';
+
 .header-container{
-    background-color: #311c1c;
-    margin-bottom: 20px;
-    height: 10vh;
+    background-color: $secondary-color;
+    height: $bar-height;
+    margin-bottom: $default-margin;
+
     display: flex;
     align-items: center;
     justify-content: flex-end;
     &__btn{
         height: 40px;
         width: 40px;
-        margin-right: 20px;
+        margin-right: $default-margin;
         background-color: #958989;
         position: relative;
     }

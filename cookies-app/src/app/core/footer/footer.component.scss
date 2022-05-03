@@ -1,5 +1,7 @@
+@import '../../../variables';
+
 .footer-container{
-    background-color: #311c1c;
-    margin-top: 20px;
-    height: 10vh;
+    background-color: $secondary-color;
+    height: $bar-height;
+    margin-top: $default-margin;
 }

@@ -1,7 +1,7 @@
+@import '../../../mixins';
+@import '../../../variables';
 .home{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include flex-center;
     flex-direction: column;
 
     &__section{
@@ -13,9 +13,14 @@
         background-color: #613737;
         height: 300px;
         color: white;
+        
     }
     &__fieldset{
         border: 0px;
+        font-size: 15px;
+        @include tablet{
+          font-size: 16px;
+        }
     }
     &__img-container{
         position: relative;
@@ -33,22 +38,35 @@
     }
     &__form-container{
         position: relative;
-        width: 300px;
+        width: 200px;
         padding: 20px;
+        @include tablet{
+          width: 300px;
+        }
     }
     &__input{
-        width: 255px;
+        width: 155px;
+        @include tablet{
+          width: 255px;
+        }
     }
     &__btn{
         position: absolute;
-        left: 34px;
-        top: 200px;
+        left: 32px;
+        top: 185px;
+        @include tablet{
+            top: 195px;
+            left: 34px;
+        }
     }
     &__leaderboard{
         background-color: #613737;
-        width: 540px;
+        width: 440px;
         color: white;
         padding: 0;
+        @include tablet{
+            width: 540px;
+        }
     }
     &__leaderboard-list{
         margin-left: 20px;

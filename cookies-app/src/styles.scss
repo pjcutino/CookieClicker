@@ -1,5 +1,6 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'mixins';
+@import 'variables';
 body{
-    background-color:#161a14;
+    background-color:$background-color;
     margin: 0;
 }
